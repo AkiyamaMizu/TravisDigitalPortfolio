@@ -1,21 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8"><title>Keebs Details | Travis</title>
+    <meta charset="UTF-8">
+    <title>FragranceKeebs | Travis</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* CLEAN AURORA THEME */
+        body {
+            background-color: #ffffff;
+            background-image: 
+                radial-gradient(circle at 10% 10%, rgba(108, 92, 231, 0.06) 0%, transparent 40%), 
+                radial-gradient(circle at 90% 90%, rgba(34, 211, 238, 0.06) 0%, transparent 40%);
+            color: #2d3436;
+            overflow-x: hidden;
+            padding-top: 80px;
+        }
+
+        :root {
+            --keebs-purple: #a29bfe;
+            --keebs-dark: #4834d4; /* Darker for better visibility */
+            --text-main: #2d3436;
+        }
+
+        /* GLASS NAVBAR - FIXED VISIBILITY */
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.95); /* Higher opacity for readability */
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(108, 92, 231, 0.2);
+            padding: 15px 0;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        .navbar-brand {
+            color: var(--keebs-dark) !important;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-link {
+            color: var(--text-main) !important; /* Dark text for visibility */
+            font-weight: 700;
+            margin: 0 15px;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--keebs-dark) !important;
+        }
+
+        /* FLOATING NUIS */
+        .nui-deco {
+            position: fixed;
+            width: 75px;
+            z-index: 1000;
+            pointer-events: none;
+            animation: floatAndSpin 14s ease-in-out infinite;
+            filter: drop-shadow(0 8px 15px rgba(0,0,0,0.1));
+        }
+
+        @keyframes floatAndSpin {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            33% { transform: translate(20px, -40px) rotate(120deg); }
+            66% { transform: translate(-20px, 40px) rotate(240deg); }
+        }
+
+        /* IMAGES & CARDS */
+        .project-showcase {
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(108, 92, 231, 0.15);
+            transition: transform 0.3s;
+            border: 1px solid rgba(255,255,255,0.8);
+        }
+
+        .project-showcase:hover {
+            transform: translateY(-5px);
+        }
+
+        .section-header {
+            color: var(--keebs-dark);
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            border-left: 5px solid var(--keebs-purple);
+            padding-left: 20px;
+        }
+
+        .yappy-text {
+            font-size: 1.15rem;
+            line-height: 2;
+            color: #4b5563;
+        }
+
+        .hero-badge {
+            background: var(--keebs-dark);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+    </style>
 </head>
 <body>
-    <div class="container my-5 glass-card p-5 text-center">
-        <a href="projects.html" class="btn btn-sm btn-outline-dark mb-4">← Back</a>
-        <h1 class="fw-bold mb-4">FragranceKeebs E-Commerce</h1>
-        <div class="row justify-content-center">
-            <div class="col-md-10">
-                <img src="media/fragkeeb.png" class="img-fluid rounded shadow mb-4">
-                <img src="media/fragkeeb2.png" class="img-fluid rounded shadow mb-4">
-                <p>This project explored minimalist UI for mechanical keyboard enthusiasts. I focused on semantic HTML and a clean, luxury aesthetic for the brand's 'About Us' and product discovery pages.</p>
+    <nav class="navbar navbar-expand-lg glass-nav fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">TRAVIS DIGITAL PORTFOLIO</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="projects.html">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                </ul>
             </div>
         </div>
+    </nav>
+
+    <img src="media/honanui.jpg" class="nui-deco" style="top: 15%; left: 3%;">
+    <img src="media/mizunui.png" class="nui-deco" style="top: 50%; right: 3%; animation-delay: -3s;">
+    <img src="media/enanui.jpg" class="nui-deco" style="bottom: 10%; left: 5%; animation-delay: -6s;">
+
+    <div class="container my-5">
+        
+        <div class="text-center mb-5 pb-4">
+            <span class="hero-badge">Polytechnic Foundation Programme (Year 0)</span>
+            <h1 class="display-3 fw-bold mb-4" style="color: var(--keebs-dark);">FragranceKeebs</h1>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <p class="yappy-text">
+                        <strong>FragranceKeebs</strong> was a milestone project for me. Developed during my Year 0 Polytechnic Foundation Programme, this group project marked the very first time I implemented <strong>HTML and CSS basics</strong> into a fully functioning website.
+                        <br><br>
+                        While "Fragrance" is simply the company name, the project itself was a deep dive into building a structured web presence from scratch. It taught me the fundamentals of layout, styling, and collaboration that would become the foundation for all my future development work.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row align-items-center mb-5 pb-5">
+            <div class="col-lg-6 pe-lg-5">
+                <h2 class="section-header">Our Story & Vision</h2>
+                <div class="yappy-text">
+                    This section illustrates the <strong>"Our Story"</strong> page, which serves as the narrative backbone of the company. It details the startup journey, explaining the "Why" behind our brand and how we began this venture.
+                    <br><br>
+                    Below the origin story, I implemented the <strong>"Our Vision"</strong> and <strong>"Our Mission"</strong> blocks. These sections are critical for establishing brand identity. I used clear headers and paragraph spacing to ensure that our core values—innovation and quality—were communicated effectively to the user. This was my first real experience in using typography to create a hierarchy of information.
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <img src="media/fragkeeb.png" class="img-fluid project-showcase" alt="Our Story and Vision Page">
+            </div>
+        </div>
+
+        <div class="row align-items-center flex-row-reverse mb-5 pb-5">
+            <div class="col-lg-6 ps-lg-5 text-end">
+                <h2 class="section-header">Who Are We?</h2>
+                <div class="yappy-text">
+                    The <strong>"Who Are We?"</strong> section is a dedicated team showcase. This part of the site was designed to humanize the brand by displaying our team members' photos along with their names and specific roles, such as CEO.
+                    <br><br>
+                    I structured this using a grid layout to keep the profiles aligned. Each member card includes a personal quote to add personality, as well as their <strong>social media handles and email addresses</strong>. This taught me how to structure repetitive content elements (like profile cards) efficiently using CSS classes, ensuring a consistent look across the entire team section.
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <img src="media/fragkeeb2.png" class="img-fluid project-showcase" alt="Team Section">
+            </div>
+        </div>
+
+        <div class="text-center py-5">
+            <h3 class="fw-bold mb-4" style="color: #636e72;">Explore More Work</h3>
+            <a href="projects.html" class="btn btn-outline-primary rounded-pill px-5 py-3 fw-bold" style="border-width: 2px;">Back to Projects Hub</a>
+        </div>
+
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
