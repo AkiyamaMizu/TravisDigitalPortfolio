@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="light">
 <head>
     <meta charset="UTF-8">
     <title>Apex Legend Bot | Travis</title>
@@ -7,38 +7,37 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="style.css">
     <style>
-        /* CLEAN AURORA THEME */
+        :root {
+            --bs-body-bg: #ffffff;
+            --bs-body-color: #2d3436;
+            --discord-blurple: #5865F2;
+            --soft-bg: #f6f6f7;
+            --dark-text: #2d3436;
+        }
+
         body {
-            background-color: #ffffff;
+            background-color: #ffffff !important;
             background-image: 
-                radial-gradient(circle at 0% 0%, rgba(88, 101, 242, 0.06) 0%, transparent 45%), 
-                radial-gradient(circle at 100% 100%, rgba(235, 69, 158, 0.06) 0%, transparent 45%);
-            color: #2d3436;
+                radial-gradient(circle at 0% 0%, rgba(88, 101, 242, 0.08) 0%, transparent 45%), 
+                radial-gradient(circle at 100% 100%, rgba(235, 69, 158, 0.08) 0%, transparent 45%);
+            color: #2d3436 !important;
             overflow-x: hidden;
             padding-top: 80px;
         }
 
-        :root {
-            --discord-blurple: #5865F2;
-            --discord-red: #ED4245;
-            --discord-green: #57F287;
-            --soft-bg: #f6f6f7;
-        }
-
-        /* GLASS NAVBAR */
+        /* SOLID WHITE NAVBAR */
         .glass-nav {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(88, 101, 242, 0.1);
+            background-color: #ffffff !important;
+            border-bottom: 1px solid rgba(88, 101, 242, 0.2);
             padding: 15px 0;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
         }
 
-        .navbar-brand { color: var(--discord-blurple) !important; font-weight: 900; letter-spacing: 0.5px; }
-        .nav-link { color: #2d3436 !important; font-weight: 700; margin: 0 15px; transition: color 0.3s; }
+        .navbar-brand { color: var(--discord-blurple) !important; font-weight: 900; letter-spacing: 1px; }
+        .nav-link { color: #000000 !important; font-weight: 800; margin: 0 15px; transition: 0.3s; }
         .nav-link:hover { color: var(--discord-blurple) !important; }
 
-        /* FLOATING NUIS */
+        /* NUI DECO */
         .nui-deco {
             position: fixed;
             width: 85px;
@@ -54,7 +53,7 @@
             66% { transform: translate(-25px, 35px) rotate(240deg); }
         }
 
-        /* SECTION STYLING */
+        /* SECTION STYLES */
         .section-header {
             color: var(--discord-blurple);
             font-weight: 900;
@@ -65,22 +64,17 @@
             padding-left: 25px;
         }
 
-        .yappy-text {
-            font-size: 1.15rem;
-            line-height: 1.9;
-            color: #4b5563;
-        }
+        .yappy-text { font-size: 1.15rem; line-height: 1.9; color: #4b5563; }
 
-        /* IMAGE SHOWCASE */
         .project-showcase {
             border-radius: 16px;
             box-shadow: 0 20px 60px rgba(88, 101, 242, 0.15);
             transition: transform 0.3s;
             border: 1px solid rgba(0,0,0,0.05);
+            margin-bottom: 20px;
         }
         .project-showcase:hover { transform: translateY(-5px); }
 
-        /* BADGES */
         .role-badge {
             background: var(--soft-bg);
             color: var(--discord-blurple);
@@ -114,9 +108,8 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="projects.html">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html">Work</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://github.com/AkiyamaMizu" target="_blank">GitHub</a></li>
                 </ul>
             </div>
         </div>
@@ -135,7 +128,7 @@
                     <p class="yappy-text">
                         <strong>The Chaos of "Data Doom-Scrolling":</strong> In the IT Consulting sector, vital project files are often lost in the noise of endless chat histories. Teams waste hours scrolling to find a single PDF or Excel sheet, leading to missed deadlines and frustration.
                         <br><br>
-                        <strong>Our Solution:</strong> We built an <strong>AI-Powered Discord Ecosystem</strong>. Instead of forcing users to switch platforms, we deployed a silent "Intelligence Bot" that automatically intercepts, categorizes, and archives shared files into a secure central database. It transforms a chaotic chat app into a structured, searchable document management system.
+                        <strong>Our Solution:</strong> We built an <strong>AI-Powered Discord Ecosystem</strong>. Instead of forcing users to switch platforms, we deployed a silent "Intelligence Bot" that automatically intercepts, categorizes, and archives shared files into a secure central database.
                     </p>
                 </div>
             </div>
@@ -143,25 +136,28 @@
 
         <div class="row mb-5 pb-5">
             <div class="col-12 mb-4"><h2 class="section-header">The Development Squad</h2></div>
+            
             <div class="col-md-4 mb-4">
                 <div class="team-card">
-                    <span class="role-badge">Frontend Architect</span>
-                    <h3 class="fw-bold">Reanne</h3>
-                    <p class="text-muted">Designed the visual experience. Reanne crafted the `styles_reanne_hell.css` dashboard, ensuring complex data was presented in a clean, admin-friendly interface.</p>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="team-card">
-                    <span class="role-badge">Core Logic Lead</span>
+                    <span class="role-badge">Dashboard Interface Lead</span>
                     <h3 class="fw-bold">Maitri</h3>
-                    <p class="text-muted">Managed the application's routing. Maitri built the `app_routes.py` system, ensuring seamless connection between the Flask backend and the user authentication layers.</p>
+                    <p class="text-muted">Developed the core dashboard architecture. Maitri built the interface and routing systems, ensuring that the complex backend data is accessible and manageable for administrators via a clean web UI.</p>
                 </div>
             </div>
+
             <div class="col-md-4 mb-4">
                 <div class="team-card">
-                    <span class="role-badge">Database Engineer</span>
+                    <span class="role-badge">Backend & AI Engineer</span>
                     <h3 class="fw-bold">Joshua</h3>
-                    <p class="text-muted">Architected the data foundation. Joshua developed the `user_schema.sql` to securely store user credentials and ensure data integrity across the platform.</p>
+                    <p class="text-muted">Handled the data heavy-lifting. Joshua engineered the system to receive JSON payloads from the bot, manage file objects, and implement the AI logic for automatic categorization.</p>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="team-card">
+                    <span class="role-badge">Search & Visual Architect</span>
+                    <h3 class="fw-bold">Reanne</h3>
+                    <p class="text-muted">Crafted the user experience (`styles_reanne_hell.css`). Reanne focused on the search interface, implementing filters and sorting logic so users can instantly retrieve specific files.</p>
                 </div>
             </div>
         </div>
@@ -176,11 +172,7 @@
                 <div class="col-lg-6 pe-lg-5">
                     <h3 class="fw-bold mb-3">01. Dynamic Collection Control</h3>
                     <p class="yappy-text">
-                        A core requirement was user consent and control—we didn't want a "spy bot" that runs forever. I implemented a strict <strong>Collection Lifecycle System</strong>.
-                        <br><br>
-                        <strong>Enabling:</strong> Admins can trigger `/enable_collection` to spin up the background listening threads. The bot confirms activation immediately with a success embed (`acollectionenable.png`).
-                        <br><br>
-                        <strong>Status Checks:</strong> At any time, staff can verify the bot's heartbeat using `/collector_status`. This provides instant feedback (`activecollectionstatus.png`), ensuring the team knows exactly when their data is being archived and when the system is dormant.
+                        A core requirement was user consent and control. I implemented a strict <strong>Collection Lifecycle System</strong>. Admins can trigger commands to spin up background listening threads, and the bot confirms activation immediately with a success embed.
                     </p>
                 </div>
                 <div class="col-lg-6">
@@ -193,11 +185,28 @@
 
             <div class="row align-items-center flex-row-reverse mb-5 pb-5 border-bottom">
                 <div class="col-lg-6 ps-lg-5 text-end">
-                    <h3 class="fw-bold mb-3">02. Malware Defense Protocol</h3>
+                    <h3 class="fw-bold mb-3">02. The Automated Data Pipeline</h3>
                     <p class="yappy-text">
-                        Security was our #1 barrier. We couldn't risk users uploading malicious scripts. I implemented a strict <strong>File Whitelist Protocol</strong> directly in the bot's event listener.
-                        <br><br>
-                        As shown here, when I attempted to upload a file named `virus.exe`, the bot immediately intercepted the packet. It rejected the file and issued a <strong>public Security Alert embed</strong>. This "Zero-Trust" approach ensures that only safe assets (PDFs, Images, Excel) ever reach our database.
+                        What happens when a file is sent? I engineered a seamless handover process.
+                        <br><strong>Step 1:</strong> A user sends an image in chat.
+                        <br><strong>Step 2:</strong> The terminal logs receipt and validates the file.
+                        <br><strong>Step 3:</strong> The bot constructs a structured <strong>JSON Payload</strong> with metadata and ships it securely to Joshua's backend for categorization.
+                    </p>
+                </div>
+                <div class="col-lg-6">
+                    <div class="d-flex flex-column gap-3">
+                        <img src="media/imagesend.png" class="img-fluid project-showcase" alt="User sending image">
+                        <img src="media/terminalimagesend.png" class="img-fluid project-showcase" alt="Terminal log">
+                        <img src="media/jsonpayload.png" class="img-fluid project-showcase" alt="JSON Payload">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row align-items-center mb-5 pb-5 border-bottom">
+                <div class="col-lg-6 pe-lg-5">
+                    <h3 class="fw-bold mb-3">03. Malware Defense Protocol</h3>
+                    <p class="yappy-text">
+                        Security was our #1 barrier. I implemented a strict <strong>File Whitelist Protocol</strong>. As shown, when I attempted to upload `virus.exe`, the bot immediately intercepted the packet, rejected the file, and issued a public Security Alert. This "Zero-Trust" approach ensures only safe assets reach our database.
                     </p>
                 </div>
                 <div class="col-lg-6">
@@ -205,13 +214,11 @@
                 </div>
             </div>
 
-            <div class="row align-items-center mb-5 pb-5 border-bottom">
-                <div class="col-lg-6 pe-lg-5">
-                    <h3 class="fw-bold mb-3">03. Backend Threat Surveillance</h3>
+            <div class="row align-items-center flex-row-reverse mb-5 pb-5 border-bottom">
+                <div class="col-lg-6 ps-lg-5 text-end">
+                    <h3 class="fw-bold mb-3">04. Backend Threat Surveillance</h3>
                     <p class="yappy-text">
-                        Security isn't just about blocking; it's about tracking. I programmed the bot to log every security incident directly to the server console.
-                        <br><br>
-                        This screenshot shows the <strong>Terminal View</strong> during an attack. You can see the system explicitly logging: <code>[SECURITY BLOCK] Prevented Travis from uploading: virus.exe</code>. This gives our DevSecOps team real-time visibility into attempted breaches.
+                        Security isn't just about blocking; it's about tracking. I programmed the bot to log every security incident to the server console. This screenshot shows the system explicitly logging the security block event, giving our DevSecOps team real-time visibility into attempted breaches.
                     </p>
                 </div>
                 <div class="col-lg-6">
@@ -219,13 +226,11 @@
                 </div>
             </div>
 
-            <div class="row align-items-center flex-row-reverse mb-5 pb-5 border-bottom">
-                <div class="col-lg-6 ps-lg-5 text-end">
-                    <h3 class="fw-bold mb-3">04. Real-Time Asset Reporting</h3>
+            <div class="row align-items-center mb-5 pb-5 border-bottom">
+                <div class="col-lg-6 pe-lg-5">
+                    <h3 class="fw-bold mb-3">05. Real-Time Asset Reporting</h3>
                     <p class="yappy-text">
-                        To solve the "Disorganized Data" problem, I built the `!generate_report` slash command. This tool provides admins with an instant snapshot of the department's data health.
-                        <br><br>
-                        The bot queries the SQLite database in real-time and returns a <strong>Department Activity Report</strong>. It breaks down collected assets by type (Images vs. PDFs), proving that the bot is actively sorting chaos into order without human intervention.
+                        To solve "Disorganized Data," I built the report generation command. The bot queries the database in real-time and returns a <strong>Department Activity Report</strong>, breaking down assets by type to prove the system is actively sorting chaos into order.
                     </p>
                 </div>
                 <div class="col-lg-6">
@@ -233,13 +238,11 @@
                 </div>
             </div>
 
-            <div class="row align-items-center mb-5 pb-5 border-bottom">
-                <div class="col-lg-6 pe-lg-5">
-                    <h3 class="fw-bold mb-3">05. Role-Based Access Control</h3>
+            <div class="row align-items-center flex-row-reverse mb-5 pb-5 border-bottom">
+                <div class="col-lg-6 ps-lg-5 text-end">
+                    <h3 class="fw-bold mb-3">06. Role-Based Access Control</h3>
                     <p class="yappy-text">
-                        A powerful tool shouldn't be accessible to everyone. I implemented <strong>RBAC decorators</strong> on sensitive commands.
-                        <br><br>
-                        Here, we see a standard user (non-admin) attempting to tamper with the bot's settings. The bot verifies the user's role against the server's permission hierarchy and immediately denies the request. This ensures that only authorized Project Managers can control the data flow.
+                        A powerful tool shouldn't be accessible to everyone. I implemented <strong>RBAC decorators</strong>. Here, a non-admin attempts to tamper with settings, and the bot immediately denies the request. This ensures only Project Managers can control data flow.
                     </p>
                 </div>
                 <div class="col-lg-6">
@@ -247,13 +250,11 @@
                 </div>
             </div>
 
-            <div class="row align-items-center flex-row-reverse mb-5">
-                <div class="col-lg-6 ps-lg-5 text-end">
-                    <h3 class="fw-bold mb-3">06. DevOps & Maintenance</h3>
+            <div class="row align-items-center mb-5">
+                <div class="col-lg-6 pe-lg-5">
+                    <h3 class="fw-bold mb-3">07. DevOps & Maintenance</h3>
                     <p class="yappy-text">
-                        Maintaining a bot requires robust utility commands. I implemented a <strong>Command Sync</strong> feature (`syncedcommands.png`) to instantly push new Slash Command updates to the Discord API without restarting the server.
-                        <br><br>
-                        Additionally, the <strong>Graceful Shutdown</strong> protocol (`shutdown.png`) ensures that when the bot is taken offline for maintenance, all database connections are closed safely, preventing data corruption.
+                        Maintaining a bot requires robust utility. I implemented a <strong>Command Sync</strong> feature to push updates instantly, and a <strong>Graceful Shutdown</strong> protocol to ensure safe database disconnection during maintenance.
                     </p>
                 </div>
                 <div class="col-lg-6">
@@ -263,16 +264,13 @@
                     </div>
                 </div>
             </div>
-
         </div>
 
         <div class="text-center py-5">
             <h3 class="fw-bold mb-4" style="color: #636e72;">Explore More Work</h3>
-            <a href="projects.html" class="btn btn-outline-primary rounded-pill px-5 py-3 fw-bold">Back to Projects Hub</a>
+            <a href="index.html" class="btn btn-outline-primary rounded-pill px-5 py-3 fw-bold">Back to Work</a>
         </div>
-
     </div>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

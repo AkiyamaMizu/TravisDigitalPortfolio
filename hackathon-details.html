@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="light">
 <head>
     <meta charset="UTF-8">
     <title>AI-gnition Hackathon Details | Travis</title>
@@ -7,23 +7,33 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="style.css">
     <style>
-        /* BASE THEME */
+        :root {
+            --bs-body-bg: #ffffff;
+            --bs-body-color: #2d3436;
+            --sjcc-purple: #6c5ce7;
+        }
+
         body {
-            background-color: #ffffff;
-            /* Soft Aurora background */
+            background-color: #ffffff !important;
             background-image: 
                 radial-gradient(circle at 0% 0%, rgba(108, 92, 231, 0.08) 0%, transparent 40%), 
                 radial-gradient(circle at 100% 100%, rgba(162, 155, 254, 0.08) 0%, transparent 40%);
-            color: #2d3436;
-            overflow-x: hidden;
+            color: #2d3436 !important;
+            padding-top: 80px;
         }
 
-        :root {
-            --sjcc-purple: #6c5ce7;
-            --sjcc-glow: rgba(108, 92, 231, 0.4);
+        /* SOLID WHITE NAVBAR */
+        .glass-nav {
+            background-color: #ffffff !important;
+            border-bottom: 1px solid rgba(108, 92, 231, 0.2);
+            padding: 15px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
         }
 
-        /* NUI DECORATIONS */
+        .navbar-brand { color: var(--sjcc-purple) !important; font-weight: 900; letter-spacing: 1px; }
+        .nav-link { color: #000000 !important; font-weight: 800; margin: 0 15px; transition: 0.3s; }
+        .nav-link:hover { color: var(--sjcc-purple) !important; }
+
         .nui-deco {
             position: fixed;
             width: 80px;
@@ -38,7 +48,6 @@
             66% { transform: translate(-25px, 35px) rotate(240deg); }
         }
 
-        /* PRETTIER BUTTONS (GLOW CAPSULE) */
         .glow-btn {
             background: var(--sjcc-purple);
             color: white;
@@ -46,35 +55,20 @@
             padding: 12px 35px;
             border-radius: 50px;
             font-weight: 700;
-            letter-spacing: 0.5px;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 4px 15px var(--sjcc-glow);
-            text-decoration: none;
-            display: inline-block;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(108, 92, 231, 0.4);
         }
-
-        .glow-btn:hover {
-            transform: translateY(-3px) scale(1.02);
-            box-shadow: 0 8px 25px rgba(108, 92, 231, 0.6);
-            color: white;
-        }
+        .glow-btn:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(108, 92, 231, 0.6); color: white; }
 
         .glow-btn-outline {
             background: white;
             color: var(--sjcc-purple);
             border: 2px solid var(--sjcc-purple);
-            box-shadow: none;
         }
-        
-        .glow-btn-outline:hover {
-            background: var(--sjcc-purple);
-            color: white;
-            box-shadow: 0 8px 25px rgba(108, 92, 231, 0.4);
-        }
+        .glow-btn-outline:hover { background: var(--sjcc-purple); color: white; }
 
-        /* CARD STYLING */
         .case-study-card {
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
             border-left: 6px solid var(--sjcc-purple);
             padding: 50px;
@@ -83,53 +77,22 @@
             margin-bottom: 60px;
         }
 
-        .yappy-text {
-            font-size: 1.15rem;
-            line-height: 2;
-            color: #4b5563;
-        }
+        .yappy-text { font-size: 1.15rem; line-height: 2; color: #4b5563; }
 
-        /* PROBLEM STATEMENT IMAGE FIX */
         .problem-img-container {
-            max-width: 80%; /* Fix: Not too big */
+            max-width: 80%; 
             margin: 0 auto;
             border-radius: 15px;
             overflow: hidden;
             box-shadow: 0 15px 30px rgba(0,0,0,0.1);
         }
 
-        /* 3D COVERFLOW ADJUSTMENTS */
-        .carousel-view {
-            perspective: 1200px;
-            overflow: visible !important;
-            padding: 20px 0;
-        }
-
+        .carousel-view { perspective: 1200px; overflow: visible !important; padding: 20px 0; }
         .carousel-inner { overflow: visible !important; }
-
-        .carousel-item {
-            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.8s;
-            opacity: 0;
-            transform: scale(0.7) rotateY(40deg);
-        }
-
-        .carousel-item.active {
-            opacity: 1;
-            transform: scale(1.05) rotateY(0deg);
-            z-index: 10;
-        }
-
-        /* Background Images: Reduced TranslateX to prevent overlap */
-        .carousel-item-next, .carousel-item-prev {
-            display: block !important;
-            position: absolute !important;
-            top: 0;
-            opacity: 0.4 !important;
-            filter: blur(4px) grayscale(40%);
-        }
-
-        .carousel-item-next { transform: scale(0.8) translateX(50%) rotateY(-40deg); }
-        .carousel-item-prev { transform: scale(0.8) translateX(-50%) rotateY(40deg); }
+        .carousel-item { transition: transform 0.8s; opacity: 0; transform: scale(0.7) rotateY(40deg); }
+        .carousel-item.active { opacity: 1; transform: scale(1.05) rotateY(0deg); z-index: 10; }
+        .carousel-item-next { transform: scale(0.8) translateX(50%) rotateY(-40deg); opacity: 0.4; filter: blur(4px); }
+        .carousel-item-prev { transform: scale(0.8) translateX(-50%) rotateY(40deg); opacity: 0.4; filter: blur(4px); }
 
         .section-header {
             color: var(--sjcc-purple);
@@ -141,6 +104,21 @@
     </style>
 </head>
 <body>
+    <nav class="navbar navbar-expand-lg glass-nav fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">TRAVIS.DEV</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Work</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://github.com/AkiyamaMizu" target="_blank">GitHub</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
     <img src="media/nenenui.jpg" class="nui-deco" style="top: 15%; left: 3%;">
     <img src="media/harunui.jpg" class="nui-deco" style="bottom: 15%; right: 3%;">
 
@@ -148,7 +126,7 @@
         
         <div class="case-study-card">
             <div class="d-flex justify-content-between align-items-center mb-4">
-                <a href="projects.html" class="glow-btn glow-btn-outline px-4 py-2" style="font-size: 0.9rem;">← Back</a>
+                <a href="index.html" class="glow-btn glow-btn-outline px-4 py-2" style="font-size: 0.9rem;">← Back</a>
             </div>
             
             <h1 class="display-3 fw-bold mb-4" style="color: var(--sjcc-purple);">AI-gnition Hackathon 2025</h1>
@@ -181,8 +159,8 @@
                         <div class="carousel-item"><img src="media/aignition2.png" class="d-block w-100 rounded shadow"></div>
                     </div>
                     <div class="d-flex justify-content-center gap-3 mt-5">
-                        <button class="glow-btn px-4 py-2" style="font-size: 0.9rem;" data-bs-target="#userCarousel" data-bs-slide="prev">Prev</button>
-                        <button class="glow-btn px-4 py-2" style="font-size: 0.9rem;" data-bs-target="#userCarousel" data-bs-slide="next">Next</button>
+                        <button class="glow-btn px-4 py-2" data-bs-target="#userCarousel" data-bs-slide="prev">Prev</button>
+                        <button class="glow-btn px-4 py-2" data-bs-target="#userCarousel" data-bs-slide="next">Next</button>
                     </div>
                 </div>
             </div>
@@ -198,7 +176,7 @@
                 </div>
             </div>
             <div class="col-lg-7">
-                 <div class="carousel-view">
+                <div class="carousel-view">
                     <img src="media/aignition3.png" class="img-fluid rounded shadow" style="transform: scale(1.05);">
                 </div>
             </div>
@@ -219,9 +197,7 @@
                 </div>
             </div>
         </div>
-
     </div>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
